@@ -1,6 +1,9 @@
+import mongoose from 'mongoose';
+
 const attendeeSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    eventId: { type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: true }
-  });
-  
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  event: { type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: true },
+}, { timestamps: true });
+
+const Attendee = mongoose.model('Attendee', attendeeSchema);
+export default Attendee;
