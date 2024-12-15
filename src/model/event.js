@@ -8,6 +8,7 @@ const eventSchema = new mongoose.Schema({
   location: { type: String, required: true },
   organizer: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   maxAttendees: { type: Number, required: true },
+  availability:{type:Number},
   attendees: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 }, { timestamps: true });
 
